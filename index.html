@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chinazaekpere & Daberechukwu | Tying the Knot</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Lato', sans-serif;
+        background-color: #FFF8F0;
+        color: #4B3F3C;
+        /* Subtle texture from https://www.heropatterns.com/ */
+        background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23B48A6E' fill-opacity='0.1' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Playfair Display', serif;
+      }
+      /* Falling Petals Animation */
+      .petals-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        pointer-events: none;
+        overflow: hidden;
+        z-index: 10;
+      }
+
+      .petal-wrapper {
+          position: absolute;
+          top: -5vh; /* Start above the screen */
+          animation-name: fall;
+          animation-timing-function: linear;
+          animation-iteration-count: infinite;
+      }
+
+      .petal {
+        width: 12px;
+        height: 12px;
+        /* background-color is now set by specific color classes */
+        border-radius: 1px 50%;
+        animation-name: sway;
+        animation-duration: 4s; /* Fixed duration for sway */
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+      
+      .petal-color-1 { background-color: rgba(244, 208, 208, 0.8); } /* Soft Pink */
+      .petal-color-2 { background-color: rgba(214, 153, 153, 0.75); } /* Dusty Rose */
+      .petal-color-3 { background-color: rgba(255, 240, 230, 0.85); } /* Creamy White */
+      .petal-color-4 { background-color: rgba(176, 48, 48, 0.7); } /* Deep Red */
+      
+      @keyframes fall {
+        to {
+          transform: translateY(105vh);
+        }
+      }
+      
+      @keyframes sway {
+        from {
+          transform: translateX(-15px) rotate(-20deg);
+        }
+        to {
+          transform: translateX(15px) rotate(20deg);
+        }
+      }
+
+      /* Pulse animation for play button */
+      .animate-pulse-slow {
+        animation: pulse 2.5s infinite cubic-bezier(0.4, 0, 0.6, 1);
+      }
+      
+      @keyframes pulse {
+        0%, 100% {
+          opacity: 0.6;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0;
+          transform: scale(1.8);
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.1.1/",
+    "react": "https://esm.sh/react@^19.1.1",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.1/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
